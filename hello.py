@@ -2,12 +2,12 @@ from cgi import parse_qs
 
 def app(environ, start_response):
     """Simplest possible application object"""
-    data = parse_qs(environ['QUERY_STRING'])
-    print data
+    get_parameters = environ['QUERY_STRING'].split('&')
+    body = '\n'.join(get_parameters) + '\n'
     status = '200 OK'
     response_headers = [
         ('Content-Type', 'text/plain'),
-        ('Content-Length', str(len(data)))
+        ('Content-Length', str(len(body)))
     ]
     start_response(status, response_headers)
-    return iter([data])
+    return iter(body)
