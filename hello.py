@@ -10,4 +10,4 @@ def app(environ, start_response):
         ('Content-Length', str(len(body)))
     ]
     start_response(status, response_headers)
-    return iter(body)
+    return [byte(body, 'utf-8')]
