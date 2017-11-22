@@ -9,4 +9,4 @@ APP=ask.wsgi
 if [-f $PID]; then rm $PID; fi
 
 cd $ROOT
-exec $GUNICORN -c $ROOT/gunicorn.conf.py --pid=$PID $APP
+exec $GUNICORN -c /home/box/web/etc/gunicorn.conf --pid=$PID $APP
