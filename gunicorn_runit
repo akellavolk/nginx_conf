@@ -4,7 +4,7 @@ GUNICORN=/usr/local/bin/gunicorn
 ROOT=/home/box/web/ask/ask
 PID=/var/run/gunicorn.pid
 
-APP=ask.wsgi
+APP=ask
 
 if [-f $PID]; then rm $PID; fi
 
